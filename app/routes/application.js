@@ -36,8 +36,11 @@ export default class ApplicationRoute extends Route {
       {
         name: 'Round 1',
         prompts: [
-          'Foo',
-          'Bar',
+          'Motherhood',
+          'Business',
+          'Messi',
+          'QA',
+          'ember-animated',
         ]
       }
     ];

@@ -1,15 +1,16 @@
 import Component from '@glimmer/component';
-import EmojiShort from 'emoji-shortname-to-image';
+import { inject as service } from '@ember/service';
 
 // <Emoji @shortname="wave" />
 
 export default class EmojiComponent extends Component {
+  @service emoji;
+
   get unicode() {
-    let es = new EmojiShort();
     let shortnameWithColons = `:${this.args.shortname}:`
-    let unicode = es.toUnicode(shortnameWithColons);
+    let unicode = this.emoji.toUnicode(shortnameWithColons);
     if (unicode === shortnameWithColons) {
-      return es.toUnicode(':question:');
+      return this.emoji.toUnicode(':question:');
     } else {
       return unicode;
     }

@@ -18,6 +18,7 @@ export default class GamesNewRoute extends Route {
         })
       )
     }
+    reactionSet.currentReaction = reactionSet.reactions.firstObject;
     return reactionSet;
   }
 }

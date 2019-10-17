@@ -31,7 +31,7 @@ export default {
   'red-darker': '#621b18',
   'red-dark': '#cc1f1a',
   'red': '#A9001A',
-  'red-light': '#ef5753',
+  'red-light': '#ba001d',
   'red-lighter': '#f9acaa',
   'red-lightest': '#fcebea',
 

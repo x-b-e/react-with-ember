@@ -1,13 +1,17 @@
 import { Model, hasOne, hasMany } from 'ember-orbit';
-import { computed } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class ReactionSet extends Model {
   @hasOne('promptSet', { inverse: 'reactionSets' }) promptSet;
 
   @hasMany('reaction', { inverse: 'reactionSet' }) reactions;
 
-  @computed('reactions.[]')
-  get currentReaction() {
-    return this.reactions.firstObject;
+  @tracked currentReaction;
+
+  goToNextReaction() {
+    console.log('goToNextReaction');
+    let index = this.reactions.content.indexOf(this.currentReaction);
+    console.log(index);
+    this.currentReaction =  this.reactions.content[index + 1];
   }
 }

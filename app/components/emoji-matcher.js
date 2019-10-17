@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
-import EmojiShort from 'emoji-shortname-to-image';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
 
 // <EmojiMatcher @query="wav" @limit={{3}} as |matches|>
 //     <div class="flex text-xl text-center">
@@ -13,26 +14,35 @@ import EmojiShort from 'emoji-shortname-to-image';
 // </EmojiMatcher>
 
 export default class EmojiMatcherComponent extends Component {
+  @service emoji;
+
   get limit() {
     return this.args.limit || 5;
   }
 
   get matches() {
     let { args: { query } } = this;
-    let emoji = new EmojiShort();
-
-    let pattern = new RegExp(`:(${query}.*?):`, 'g');
-    let result = pattern.exec(emoji.shortnames);
-    let matches = [];
-    while (result != null && matches.length < this.limit) {
-      matches.push(result[0]);
-      result = pattern.exec(emoji.shortnames);
+    let m = [];
+    if (query && query.length > 0) {
+      let pattern = new RegExp(`:(${query}.*?):`, 'g');
+      let result = pattern.exec(this.emoji.shortnames);
+      while (result != null && m.length < this.limit) {
+        m.push(result[0]);
+        result = pattern.exec(this.emoji.shortnames);
+      }  
     }
-    return matches.map(function(match) {
+
+    let matches = m.map(match => {
       return {
         shortname: match.replace(/:/g, ''),
-        unicode: emoji.toUnicode(match)
+        unicode: this.emoji.toUnicode(match)
       }
     });
+
+    if (this.args.onMatch) {
+      this.args.onMatch(matches);
+    }
+
+    return matches;
   }
 }
