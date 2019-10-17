@@ -1,9 +1,25 @@
-<MastHead />
+<MastHead @shouldFlicker={{true}} />
 
-<div class="question text-yellow text-shadow text-center">
+<div class="text-6xl text-yellow text-shadow text-center">
   "Fixed. Once and for all."
 </div>
 
 <div class="text-center mt-8">
-  {{input class="bg-transparent border-0 border-b-2 border-yellow rounded-none text-2xl outline-none text-center text-yellow font-mono"}}
+  {{input class="bg-transparent border-0 border-b-2 border-yellow rounded-none text-3xl outline-none text-center text-yellow font-mono pb-3"}}
 </div>
+
+<div class="reaction text-6xl text-center mt-8">
+  🧐
+</div>
+
+<ul class="results-list list-reset pt-8 w-lg mx-auto">
+  <li>
+    <ResultItem @title="Motherhood" @emoji="😤" />
+  </li>
+  <li>
+    <ResultItem @title="Ember Animated" @emoji="🤩" />
+  </li>
+  <li>
+    <ResultItem @title="Bower" @emoji="🤢" />
+  </li>
+</ul>

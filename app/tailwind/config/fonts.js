@@ -19,7 +19,7 @@
 
  export default {
   'sans': [
-    'system-ui',
+    'Avenir',
     'BlinkMacSystemFont',
     '-apple-system',
     'Segoe UI',
