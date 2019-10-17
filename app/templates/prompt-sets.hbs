@@ -1,0 +1,8 @@
+{{#each this.model as |promptSet|}}
+  <h2>{{promptSet.name}}</h2>
+  <ul class="mb-2">
+    {{#each promptSet.prompts as |prompt|}}
+      <li>{{prompt.value}}</li>
+    {{/each}}
+  </ul>
+{{/each}}

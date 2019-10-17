@@ -12,4 +12,5 @@ Router.map(function() {
   this.route('games', function() {
     this.route('show');
   })
+  this.route('prompt-sets');
 });
