@@ -55,5 +55,8 @@
   },
   "engines": {
     "node": "8.* || >= 10.*"
+  },
+  "dependencies": {
+    "emoji-shortname-to-image": "^1.2.3"
   }
 }
