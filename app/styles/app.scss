@@ -1,12 +1,23 @@
+@import 'tailwind';
+$font: "Alfa Slab One";
+
 html {
   height: 100%;
 }
 
 body {
   background-image: linear-gradient(0deg, #000000 0%, #9F041B 100%);
+  font-family: $font;
 }
 
 .container {
   max-width: 990px;
   margin: 0 auto;
+}
+
+.mast-head {
+  text-align: center;
+  img {
+    margin: 50px auto;
+  }
 }
