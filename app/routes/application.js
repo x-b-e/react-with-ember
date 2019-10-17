@@ -19,7 +19,7 @@ export default class ApplicationRoute extends Route {
 
   async seedReactors() {
     for (let name of ['Sean', 'Milind']) {
-      let existing = this.store.cache.query(function(qb) {
+      let existing = await this.store.query(function(qb) {
         return qb.findRecords('reactor').filter({
           attribute: 'name',
           value: name,
@@ -43,7 +43,7 @@ export default class ApplicationRoute extends Route {
     ];
 
     for (let datum of data) {
-      let existing = this.store.cache.query(function(qb) {
+      let existing = await this.store.query(function(qb) {
         return qb.findRecords('promptSet');
       });
       if (existing.length === 0) {

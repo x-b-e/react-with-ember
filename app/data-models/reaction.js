@@ -1,9 +1,7 @@
-import { Model, hasOne, attr } from 'ember-orbit';
+import { Model, hasOne } from 'ember-orbit';
 
 export default class Reaction extends Model {
   @hasOne('reactionSet', { inverse: 'reactions' }) reactionSet;
 
-  @hasOne('reactor', { inverse: 'reactionSets' }) reactor;
-
-  @attr('string') value;
+  @hasOne('prompt', { inverse: 'reactions' }) prompt;
 }

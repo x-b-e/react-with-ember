@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('results');
   this.route('reactors');
   this.route('games', function() {
-    this.route('show');
+    this.route('new');
   })
   this.route('prompt-sets');
 });
