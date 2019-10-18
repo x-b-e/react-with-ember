@@ -42,19 +42,25 @@ export default class ReactionInputComponent extends Component {
     if (this.args.onSet) {
       this.args.onSet(this.currentQuery);
     }
+    this.reset()
+  }
+
+  reset() {
     this.currentQuery = '';
     document.getElementById('current-query').value = '';
+    this.startedAt = null;
   }
 
   @action setMatches(value) {
     this.matches = value;
   }
 
-  @tracked shotClock = 10000;
+  @tracked shotClock = 5000;
 
   @tracked startedAt;
 
   @task({ restartable: true }) *countdownTask() {
+    yield timeout(3000);
     this.startedAt = new Date();
     while (this.shotClock - moment().diff(this.startedAt) > 0) {
       yield timeout(10);
@@ -62,5 +68,6 @@ export default class ReactionInputComponent extends Component {
     if (this.args.onSet) {
       this.args.onSet(this.currentQuery);
     }
+    this.reset();
   }
 }

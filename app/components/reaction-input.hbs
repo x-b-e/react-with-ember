@@ -6,13 +6,15 @@
   {{@promptValue}}
 </div>
 
-<CountdownTimer
-  @timeRemaining={{
-    min
-    this.shotClock
-    (ceil (div (sub this.shotClock (moment-diff this.startedAt (now interval=10))) 1000))
-  }}
-/>
+{{#if this.startedAt}}
+  <CountdownTimer
+    @timeRemaining={{
+      min
+      (div this.shotClock 1000)
+      (ceil (div (sub this.shotClock (moment-diff this.startedAt (now interval=10))) 1000))
+    }}
+  />
+{{/if}}
 
 <div class="text-center mt-8">
   <input
