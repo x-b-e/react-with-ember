@@ -1,11 +1,13 @@
 <div class="flex text-yellow text-4xl mt-8">
-  <div class="flex-auto font-sans">
+  <div class="flex-auto font-sans pr-2">
     {{@reaction.prompt.value}}
   </div>
   <div class="flex-none">
     {{#if @reaction.isReacted}}
       {{@reaction.shortname}}
       <Emoji @shortname={{@reaction.value}} />
+    {{else}}
+      <Emoji @shortname="x" />
     {{/if}}
   </div>
 </div>
