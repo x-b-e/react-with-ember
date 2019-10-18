@@ -29,6 +29,9 @@ export default class ReactionInputComponent extends Component {
   @action
   setReactionValueFromEnter(e) {
     if (e.key === 'Enter') {
+      if (this.matches.length === 1) {
+        this.currentQuery = this.matches[0].shortname;
+      }
       this.setReaction();
     }
   }
@@ -55,7 +58,13 @@ export default class ReactionInputComponent extends Component {
     this.matches = value;
   }
 
-  @tracked shotClock = 5000;
+  get shotClock() {
+    if (this.args.maxSeconds) {
+      return this.args.maxSeconds * 1000;
+    } else {
+      return 5000;
+    }
+  }
 
   @tracked startedAt;
 

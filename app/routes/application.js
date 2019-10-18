@@ -35,6 +35,7 @@ export default class ApplicationRoute extends Route {
     let data = [
       {
         name: 'Round 1',
+        maxSeconds: 5,
         prompts: [
           'motherhood',
           'business',
@@ -45,6 +46,7 @@ export default class ApplicationRoute extends Route {
       },
       {
         name: 'Round 2',
+        maxSeconds: 5,
         prompts: [
           'Ember',
           'ember-animated',
@@ -55,6 +57,7 @@ export default class ApplicationRoute extends Route {
       },
       {
         name: 'Round 3',
+        maxSeconds: 5,
         prompts: [
           'bug fixed (+70,0000,-0)',
           'orbit.js',
@@ -62,6 +65,17 @@ export default class ApplicationRoute extends Route {
           '"once and for all"',
           'hooks',
         ],
+      },
+      {
+        name: 'Round 4',
+        maxSeconds: 10,
+        prompts: [
+          'Yehuda',
+          'Tom',
+          'Ed',
+          'Sean (@barelyknown)',
+          'Milind (@milindalvares)'
+        ]
       }
     ];
 
@@ -75,6 +89,7 @@ export default class ApplicationRoute extends Route {
         let promptSet = await this.store.addRecord({
           type: 'promptSet',
           name: datum.name,
+          maxSeconds: datum.maxSeconds,
         });
         for (let value of datum.prompts) {
           await this.store.addRecord({

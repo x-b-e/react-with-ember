@@ -4,6 +4,7 @@
   <ReactionInput
     @promptValue={{this.model.currentReaction.prompt.value}}
     @onSet={{this.setReactionAndGoToNext}}
+    @maxSeconds={{this.model.promptSet.maxSeconds}}
   />
 {{/if}}
 

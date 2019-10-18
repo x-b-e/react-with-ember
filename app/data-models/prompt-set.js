@@ -6,4 +6,6 @@ export default class PromptSet extends Model {
   @hasMany('prompt', { inverse: 'promptSet' }) prompts;
 
   @hasMany('reactionSet', { inverse: 'promptSet' }) reactionSets;
+
+  @attr('number') maxSeconds;
 }
