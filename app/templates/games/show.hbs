@@ -1,0 +1,12 @@
+<MastHead @shouldFlicker={{true}} />
+
+<ul class="results-list list-reset pt-8 w-lg mx-auto">
+    {{#each
+      (sort-by "updatedAt:asc" (filter-by "updatedAt" this.model.reactions))
+      as |reaction|
+    }}
+      <li>
+        <ResultItem @reaction={{reaction}} />
+      </li>
+    {{/each}}
+</ul>

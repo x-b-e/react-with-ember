@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('reactors');
   this.route('games', function() {
     this.route('new');
+    this.route('show', { path: '/:id' });
   })
   this.route('prompt-sets');
 });
