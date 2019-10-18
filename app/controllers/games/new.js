@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import move from 'ember-animated/motions/move';
+import moment from 'moment';
 
 export default class GamesNewController extends Controller {
   transition = move;
@@ -39,6 +40,7 @@ export default class GamesNewController extends Controller {
   @action
   setReaction() {
     this.model.currentReaction.value = this.currentQuery;
+    this.model.currentReaction.updatedAt = moment().toDate();
     this.set('currentQuery', '');
     document.getElementById('current-query').value = '';
     this.model.goToNextReaction();

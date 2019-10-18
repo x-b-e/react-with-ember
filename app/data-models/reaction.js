@@ -8,6 +8,8 @@ export default class Reaction extends Model {
 
   @attr('string') value;
 
+  @attr('string') updatedAt;
+
   @hasOne('reactionSet', { inverse: 'reactions' }) reactionSet;
 
   @hasOne('prompt', { inverse: 'reactions' }) prompt;

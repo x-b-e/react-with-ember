@@ -24,12 +24,17 @@
   </EmojiMatcher>
 </ul>
 
-{{#animated-container}}
   <ul class="results-list list-reset pt-8 w-lg mx-auto">
-    {{#animated-each (sort-by "updatedAt" (filter-by "isReacted" this.model.reactions)) use=moveTransition as |reaction|}}
-      <li>
-        <ResultItem @reaction={{reaction}} />
-      </li>
-    {{/animated-each}}
+    {{#animated-container}}
+      {{#animated-each
+        (sort-by "updatedAt:desc" (filter-by "isReacted" this.model.reactions))
+        use=moveTransition
+        duration=200
+        as |reaction|
+      }}
+        <li>
+          <ResultItem @reaction={{reaction}} />
+        </li>
+      {{/animated-each}}
+    {{/animated-container}}
   </ul>
-{{/animated-container}}
