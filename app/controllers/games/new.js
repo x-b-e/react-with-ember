@@ -1,7 +1,16 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
+import move from 'ember-animated/motions/move';
 
 export default class GamesNewController extends Controller {
+  transition = move;
+
+  * moveTransition({ keptSprites, sentSprites, receivedSprites }) {
+    keptSprites.forEach(move)
+    sentSprites.forEach(move);
+    receivedSprites.forEach(move);
+  }
+
   @action
   setCurrentQuery(e) {
     this.set('currentQuery', e.target.value);

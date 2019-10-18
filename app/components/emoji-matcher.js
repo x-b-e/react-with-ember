@@ -1,6 +1,5 @@
 import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
-import { computed } from '@ember/object';
 
 // <EmojiMatcher @query="wav" @limit={{3}} as |matches|>
 //     <div class="flex text-xl text-center">
@@ -29,7 +28,7 @@ export default class EmojiMatcherComponent extends Component {
       while (result != null && m.length < this.limit) {
         m.push(result[0]);
         result = pattern.exec(this.emoji.shortnames);
-      }  
+      }
     }
 
     let matches = m.map(match => {

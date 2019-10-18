@@ -9,9 +9,7 @@ export default class ReactionSet extends Model {
   @tracked currentReaction;
 
   goToNextReaction() {
-    console.log('goToNextReaction');
     let index = this.reactions.content.indexOf(this.currentReaction);
-    console.log(index);
     this.currentReaction =  this.reactions.content[index + 1];
   }
 }

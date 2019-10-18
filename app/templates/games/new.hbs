@@ -2,6 +2,7 @@
 
 <div class="text-6xl text-yellow text-shadow text-center">
   {{this.model.currentReaction.prompt.value}}
+  <CountdownTimer />
 </div>
 
 <div class="text-center mt-8">
@@ -17,20 +18,18 @@
 
 <ul class="reaction text-6xl text-center mt-8 flex list-reset justify-center">
   <EmojiMatcher @query={{this.currentQuery}} @onMatch={{this.setMatches}} as |matches|>
-    {{#each matches as |match|}}
-      <EmojiSelectionItem @emoji={{match.unicode}} @shortname={{match.shortname}} />
+    {{#each matches as |match index|}}
+      <EmojiSelectionItem @emoji={{match.unicode}} @shortname={{match.shortname}} @index={{index}} />
     {{/each}}
   </EmojiMatcher>
 </ul>
 
-<ul class="results-list list-reset pt-8 w-lg mx-auto">
-  <li>
-    <ResultItem @title="Motherhood" @emoji="😤" />
-  </li>
-  <li>
-    <ResultItem @title="Ember Animated" @emoji="🤩" />
-  </li>
-  <li>
-    <ResultItem @title="Bower" @emoji="🤢" />
-  </li>
-</ul>
+{{#animated-container}}
+  <ul class="results-list list-reset pt-8 w-lg mx-auto">
+    {{#animated-each (sort-by "updatedAt" (filter-by "isReacted" this.model.reactions)) use=moveTransition as |reaction|}}
+      <li>
+        <ResultItem @reaction={{reaction}} />
+      </li>
+    {{/animated-each}}
+  </ul>
+{{/animated-container}}
