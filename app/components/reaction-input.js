@@ -33,6 +33,10 @@ export default class ReactionInputComponent extends Component {
     }
   }
 
+  focusInput() {
+    document.getElementById('current-query').focus();
+  }
+
   @action
   setReaction() {
     if (this.args.onSet) {

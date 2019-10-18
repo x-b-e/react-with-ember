@@ -21,6 +21,7 @@
     {{on "keyup" this.setCurrentQuery}}
     {{on "keydown" this.setCurrentQueryByOption}}
     {{on "keydown" this.setReactionValueFromEnter}}
+    {{did-insert this.focusInput}}
     id="current-query"
     autocomplete="off"
   >
