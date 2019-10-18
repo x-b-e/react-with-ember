@@ -42,12 +42,24 @@ export default class ApplicationRoute extends Route {
           'QA',
           'ember-animated',
         ]
-      }
+      },
+      {
+        name: 'Round 2',
+        prompts: [
+          'Foo',
+          'Bar',
+          'Bax',
+          'Bux',
+          'Bam',
+        ]
+      },
     ];
 
     for (let datum of data) {
       let existing = await this.store.query(function(qb) {
-        return qb.findRecords('promptSet');
+        return qb.findRecords('promptSet').filter({
+          attribute: 'name', value: datum.name,
+        });
       });
       if (existing.length === 0) {
         let promptSet = await this.store.addRecord({
