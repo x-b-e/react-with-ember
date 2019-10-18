@@ -50,7 +50,7 @@ export default class ReactionInputComponent extends Component {
     this.matches = value;
   }
 
-  @tracked shotClock = 5000;
+  @tracked shotClock = 10000;
 
   @tracked startedAt;
 

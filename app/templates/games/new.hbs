@@ -8,16 +8,12 @@
 {{/if}}
 
 <ul class="results-list list-reset pt-8 w-lg mx-auto">
-  {{#animated-container}}
-    {{#animated-each
-      (sort-by "updatedAt:desc" (filter-by "isReacted" this.model.reactions))
-      use=moveTransition
-      duration=200
+    {{#each
+      (sort-by "updatedAt:asc" (filter-by "updatedAt" this.model.reactions))
       as |reaction|
     }}
       <li>
         <ResultItem @reaction={{reaction}} />
       </li>
-    {{/animated-each}}
-  {{/animated-container}}
+    {{/each}}
 </ul>

@@ -4,17 +4,17 @@ import move from 'ember-animated/motions/move';
 import moment from 'moment';
 
 export default class GamesNewController extends Controller {
-  transition = move;
-
-  * moveTransition({ keptSprites, sentSprites, receivedSprites }) {
-    keptSprites.forEach(move)
-    sentSprites.forEach(move);
-    receivedSprites.forEach(move);
+  *moveTransition({ keptSprites, receivedSprites }) {
+    for (let kept of keptSprites) {
+      yield move(kept);
+    }
+    for (let sprite of receivedSprites) {
+      yield move(sprite);
+    }
   }
 
   @action
   setReactionAndGoToNext(value) {
-    console.log({ value });
     this.model.currentReaction.value = value;
     this.model.currentReaction.updatedAt = moment().toDate();
     this.model.goToNextReaction();

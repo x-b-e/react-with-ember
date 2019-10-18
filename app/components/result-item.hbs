@@ -3,6 +3,9 @@
     {{@reaction.prompt.value}}
   </div>
   <div class="flex-none">
-    {{@reaction.emojiUnicode}}
+    {{#if @reaction.isReacted}}
+      {{@reaction.shortname}}
+      <Emoji @shortname={{@reaction.value}} />
+    {{/if}}
   </div>
 </div>
