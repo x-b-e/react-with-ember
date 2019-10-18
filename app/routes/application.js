@@ -36,23 +36,33 @@ export default class ApplicationRoute extends Route {
       {
         name: 'Round 1',
         prompts: [
-          'Motherhood',
-          'Business',
+          'motherhood',
+          'business',
           'Messi',
-          'QA',
-          'ember-animated',
+          'fest',
+          'pager',
         ]
       },
       {
         name: 'Round 2',
         prompts: [
-          'Foo',
-          'Bar',
-          'Bax',
-          'Bux',
-          'Bam',
+          'Ember',
+          'ember-animated',
+          'works on my machine',
+          'ember-concurrency',
+          'splattributes',
         ]
       },
+      {
+        name: 'Round 3',
+        prompts: [
+          'bug fixed (+70,0000,-0)',
+          'orbit',
+          'mixin',
+          'once and for all',
+          'hooks',
+        ],
+      }
     ];
 
     for (let datum of data) {

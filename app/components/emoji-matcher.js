@@ -23,7 +23,7 @@ export default class EmojiMatcherComponent extends Component {
     let { args: { query } } = this;
     let m = [];
     if (query && query.length > 0) {
-      let pattern = new RegExp(`:(${query}.*?):`, 'g');
+      let pattern = new RegExp(`:([^|]*?${query}.*?):`, 'g');
       let result = pattern.exec(this.emoji.shortnames);
       while (result != null && m.length < this.limit) {
         m.push(result[0]);
