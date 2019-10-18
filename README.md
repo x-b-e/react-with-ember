@@ -2,6 +2,12 @@
 
 Emoji-reaction practice application, written in Ember Octane by [@milindalvares](https://twitter.com/milindalvares) and [@barelyknown](https://twitter.com/barelyknown) for a lightning talk at EmberFest 2019 in Copenhagen, Denmark.
 
+Here's the video!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y3rXwPvn7Cw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+...and some screenshots from the app.
+
 ![screenshot 0](public/screenshot-0.png)
 
 ![screenshot 1](public/screenshot-1.png)
