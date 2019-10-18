@@ -41,7 +41,7 @@ export default class ApplicationRoute extends Route {
           'Messi',
           'fest',
           'pager',
-        ]
+        ],
       },
       {
         name: 'Round 2',
@@ -51,15 +51,15 @@ export default class ApplicationRoute extends Route {
           'works on my machine',
           'ember-concurrency',
           'splattributes',
-        ]
+        ],
       },
       {
         name: 'Round 3',
         prompts: [
           'bug fixed (+70,0000,-0)',
-          'orbit',
-          'mixin',
-          'once and for all',
+          'orbit.js',
+          'mixins',
+          '"once and for all"',
           'hooks',
         ],
       }
