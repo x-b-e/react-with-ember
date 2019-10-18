@@ -1,57 +1,24 @@
 # react-with-ember
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Emoji-reaction practice application, written in Ember Octane by [@milindalvares](https://twitter.com/milindalvares) and [@barelyknown](https://twitter.com/barelyknown) for a lightning talk at EmberFest 2019 in Copenhagen, Denmark.
 
-## Prerequisites
+![screenshot 1](public/screenshot-1.png)
 
-You will need the following things properly installed on your computer.
+![screenshot 2](public/screenshot-2.png)
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+![screenshot 3](public/screenshot-3.png)
 
-## Installation
+![screenshot 4](public/screenshot-4.png)
 
-* `git clone <repository-url>` this repository
-* `cd react-with-ember`
-* `npm install`
+![screenshot 5](public/screenshot-5.png)
 
-## Running / Development
+## Install Yourself
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+```
+npm install
+ember s
+```
 
-### Code Generators
+## Disclaimer
 
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+Seriously, we didn't start writing the code until 10PM the night before the lightning talks after we got back from pizza. _There are hacksssss._
