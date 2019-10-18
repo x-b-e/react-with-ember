@@ -13,8 +13,9 @@ export default class GamesNewController extends Controller {
   }
 
   @action
-  setReactionAndGoToNext() {
-    this.model.currentReaction.value = this.currentQuery;
+  setReactionAndGoToNext(value) {
+    console.log({ value });
+    this.model.currentReaction.value = value;
     this.model.currentReaction.updatedAt = moment().toDate();
     this.model.goToNextReaction();
   }

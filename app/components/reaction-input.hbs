@@ -14,8 +14,6 @@
   }}
 />
 
-{{log (mult (ceil (div (sub this.shotClock (moment-diff this.startedAt (now interval=100))) 1000) 1000))}}
-
 <div class="text-center mt-8">
   <input
     class="bg-transparent border-0 border-b-2 border-yellow rounded-none text-3xl outline-none text-center text-yellow font-mono pb-3"
@@ -24,13 +22,18 @@
     {{on "keydown" this.setCurrentQueryByOption}}
     {{on "keydown" this.setReactionValueFromEnter}}
     id="current-query"
+    autocomplete="off"
   >
 </div>
 
 <ul class="reaction text-6xl text-center mt-8 flex list-reset justify-center">
   <EmojiMatcher @query={{this.currentQuery}} @onMatch={{this.setMatches}} as |matches|>
-    {{#each matches as |match|}}
-      <EmojiSelectionItem @emoji={{match.unicode}} @shortname={{match.shortname}} />
+    {{#each matches as |match index|}}
+      <EmojiSelectionItem
+        @emoji={{match.unicode}}
+        @shortname={{match.shortname}}
+        @index={{index}}
+      />
     {{/each}}
   </EmojiMatcher>
 </ul>

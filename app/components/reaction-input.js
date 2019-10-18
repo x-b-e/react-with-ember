@@ -35,11 +35,11 @@ export default class ReactionInputComponent extends Component {
 
   @action
   setReaction() {
-    this.currentQuery = '';
-    document.getElementById('current-query').value = '';
     if (this.args.onSet) {
       this.args.onSet(this.currentQuery);
     }
+    this.currentQuery = '';
+    document.getElementById('current-query').value = '';
   }
 
   @action setMatches(value) {
