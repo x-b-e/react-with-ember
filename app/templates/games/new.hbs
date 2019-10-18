@@ -7,14 +7,19 @@
   />
 {{/if}}
 
+{{log this.model.reactions}}
+
 <ul class="results-list list-reset pt-8 w-lg mx-auto">
-  <li>
-    <ResultItem @title="Motherhood" @emoji="😤" />
-  </li>
-  <li>
-    <ResultItem @title="Ember Animated" @emoji="🤩" />
-  </li>
-  <li>
-    <ResultItem @title="Bower" @emoji="🤢" />
-  </li>
+  {{#animated-container}}
+    {{#animated-each
+      (sort-by "updatedAt:desc" (filter-by "isReacted" this.model.reactions))
+      use=moveTransition
+      duration=200
+      as |reaction|
+    }}
+      <li>
+        <ResultItem @reaction={{reaction}} />
+      </li>
+    {{/animated-each}}
+  {{/animated-container}}
 </ul>
