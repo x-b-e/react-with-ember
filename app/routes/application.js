@@ -73,8 +73,8 @@ export default class ApplicationRoute extends Route {
           'Yehuda',
           'Tom',
           'Ed',
-          'Sean (@barelyknown)',
-          'Milind (@milindalvares)'
+          '@barelyknown',
+          '@milindalvares',
         ]
       }
     ];

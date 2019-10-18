@@ -23,7 +23,8 @@ body {
   background-image: url('../react-header.png');
   background-size: 100%;
   background-repeat: no-repeat;
-  margin: 50px auto 50px;
+	margin: 50px auto 50px;
+	transform: translateX(20px);
 }
 
 .mast-head.alt {

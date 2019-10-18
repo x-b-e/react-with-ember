@@ -2,7 +2,7 @@
   <div class="flex-auto font-sans pr-2">
     {{@reaction.prompt.value}}
   </div>
-  <div class="flex-none">
+  <div class="flex-none text-5xl -mt-2">
     {{#if @reaction.isReacted}}
       {{@reaction.shortname}}
       <Emoji @shortname={{@reaction.value}} />
