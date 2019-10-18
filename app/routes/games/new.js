@@ -10,6 +10,14 @@ export default class GamesNewRoute extends Route {
       return qb.findRecords('promptSet');
     });
 
+    promptSets = promptSets.toArray().sort(function(a, b) {
+      if (a.name < b.name) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+
     let promptSet;
 
     let reactedPromptSets = reactionSets.map(function(reactionSet) {
